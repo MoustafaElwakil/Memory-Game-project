@@ -114,7 +114,7 @@ function resetGame(){
     timeCount = 0;
     solvedCount = 0;
     clearTimeout(timerPtr);
-    //$("#timer").html(0);
+    $("#timer").html(0);
     // re-setup game
     initGame();
 }
@@ -124,10 +124,9 @@ function endGame(){
     // stop timer
     clearTimeout(timerPtr);
     // show prompt
-
     let stars = $(".fa-star").length;
     vex.dialog.confirm({
-        message: `Congratulation! You won With ${moves} Moves ${stars}/3 Stars. Woooooooo!`,
+        message: `Congrats! You just won the game in ${timeCount} seconds with ${stars}/3 star rating. Do you want to play again?`,
         callback: function(value){
             if (value){
                 resetGame();
